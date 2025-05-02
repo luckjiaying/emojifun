@@ -1,0 +1,4 @@
+poke_df <- read.csv("C:\\Users\\jc\\Downloads\\pokemon.csv")
+emoji_pokemon <- poke_df[, c("id", "identifier")]
+
+write.csv(emoji_pokemon, file = "C:\\Users\\jc\\Downloads\\emoji_pokemon.csv")
