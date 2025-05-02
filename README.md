@@ -1,6 +1,5 @@
-title: "emojifun: An R Package for Emoji & Pokémon Visualization"
-output: html_document
-date: "2025-04-28"
+emojifun: An R Package for Emoji & Pokémon Visualization
+
 
 This R package lets users:
 - Automatically convert **text to emoji** based on meaning.
