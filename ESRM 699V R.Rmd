@@ -1,0 +1,133 @@
+---
+title: "emojifun: An R Package for Emoji & Pokémon Visualization"
+output: html_document
+date: "2025-04-28"
+---
+### Jiaying Chen
+### ESRM 699V
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 💬 Background information
+
+- Emojis are widely used for **communication** and **sentiment expression** in text.
+- Pokémon are culturally iconic and **visually engaging**, especially in educational or playful visualizations.
+- Combining text and images adds a **fun, interactive layer** to data analysis and reporting in R.
+
+➡️ But R lacks built-in tools for converting text to emoji and inserting character images like Pokémon in R Markdown or console.
+
+
+
+
+## ❗ Problem Statement
+
+- R users often want to **visualize** or **enrich** outputs using emojis or **visual media** like images and GIFs, but the available tools for these tasks are limited and complex..
+- Emoji conversion is **manual** and limited.
+- Inserting character graphics (like Pokémon) into R Markdown is not straightforward.
+- There’s a gap in tools that are:
+  - **Easy to use** without requiring complex coding skills.
+  - **Markdown-ready** for smooth integration into reports and presentations.
+  - **Fun and functional**, adding value beyond basic data visualization.
+
+
+
+
+## 🎯 Goal of `emojifun`
+
+To create an **easy-to-use R package** that lets users:
+
+- Automatically convert **text to emoji** based on meaning.
+- Insert **Pokémon images** into R Markdown.
+- Customize and expand emoji/image dictionaries easily.
+
+All designed to **enhance presentations, reports, or playful projects**.
+
+
+
+
+## 📦 Package Components
+The `emojifun` package provides the following main functions and internal support:
+
+- `tte()` – Converts text to emojis.
+- `newtte()` – Converts text to emojis(random pick).
+- `show_pokemon()` – Inserts Pokémon images (PNG).
+- `mbtie()` – Inserts MBTI images (PNG).
+
+
+Internal Support:
+
+- Custom Emoji Dictionary (JSON-based): Users can easily expand or customize the available emoji set by providing a JSON file that maps words to specific emojis. 
+- Pokémon Sprite Mapping: Includes a mapping of Pokémon names to their corresponding image files, making it straightforward to call and display Pokémon characters within R Markdown.
+
+
+
+
+## 🧠 Text-to-Emoji Function
+
+```{r}
+library(emojifun)
+tte("I am happy") 
+tte("I like dog and cat")
+
+```
+
+
+```{r}
+library(emojifun)
+newtte("I like dog and cat")
+```
+```{r}
+library(emojifun)
+newtte("today is a sunny day, i wanna go outside with my friends") 
+newtte("i feel sad because our team failed in the basketball game") 
+newtte("which animals is in the picture? gorilla, monkey, panda, dolphin, rabbit  ?")
+newtte("I love pizza and chocolate!")
+
+```
+
+## 🧸 pokemon Function
+
+```{r}
+library(emojifun)
+show_pokemon("pikachu")
+
+```
+
+
+I like
+```{r, echo=FALSE}
+show_pokemon("charmander")
+```
+very much!
+
+
+
+```{r, echo=FALSE}
+mbtie("ISTP")
+
+```
+
+
+## ⚙️ resources
+
+- `emoji-en-US.json` from [emojilib](https://github.com/muan/emojilib)
+- `pokemon.csv` parsed from PokéAPI sprite data
+- Handles file lookup, path resolution, and fallback errors
+- Modular and extensible codebase
+
+
+
+
+## ✅ Summary
+
+- `emojifun` makes R more expressive and fun
+- Solves emoji and image-insertion problems in a simple way
+- Useful for:
+  - Education
+  - Presentations
+  - Shiny apps
+  - Just having fun with R!
+
+Thank you! 🙏
+
